@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "re-pcap"
+version = "0.1.0"
+description = "MCP server for packet-capture analysis: PCAP parse, HTTP/HTTPS extract, DNS query extraction, publisher-endpoint correlation. Pure-Python, vendor-neutral."
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+keywords = ['mcp', 'pcap', 'network', 'tls', 'dns', 'wireshark', 'capture']
+authors = [{name = "John"}]
+dependencies = ['mcp[cli]>=1.2', 'pydantic>=2.6']
+
+[project.scripts]
+re-pcap = "re_pcap.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
